@@ -12,41 +12,29 @@ Proof of concept for future plans of using neural networks as a surrogate for Fi
 
 For a cantilever beam with a point load applied at the free end:
 
-$$\[
-\delta_{\max} = \frac{FL^3}{3EI}
-\]$$
+$$\delta_{\max} = \frac{FL^3}{3EI}$$
 
 where the area moment of inertia for a rectangular cross-section is:
 
-$$\[
-I = \frac{bh^3}{12}
-\]$$
+$$I = \frac{bh^3}{12}$$
 
 ### Maximum Bending Stress
 
 The maximum bending stress occurs at the outer surface of the beam:
 
-$$\[
-\sigma_{\max} = \frac{Mc}{I}
-\]$$
+$$\sigma_{\max} = \frac{Mc}{I}$$
 
 where:
 
-$$\[
-M = FL
-\]$$
+$$M = FL$$
 
 and:
 
-$$\[
-c = \frac{h}{2}
-\]$$
+$$c = \frac{h}{2}$$
 
 Therefore:
 
-$$\[
-\sigma_{\max} = \frac{FL(h/2)}{I}
-\]$$
+$$\sigma_{\max} = \frac{FL(h/2)}{I}$$
 
 ## Machine Learning Model
 
@@ -78,13 +66,9 @@ Output:
 
 The data is fed into the model using Pandas DataLoaders. Before input, the data is standardized through the method:
 
-$$\[
-X_{\text{standardized}} = \frac{X - \mu_X}{\sigma_X}
-\]$$
+$$X_{\text{standardized}} = \frac{X - \mu_X}{\sigma_X}$$
 
-$$\[
-y_{\text{standardized}} = \frac{y - \mu_y}{\sigma_y}
-\]$$
+$$y_{\text{standardized}} = \frac{y - \mu_y}{\sigma_y}$$
 
 The mean and standard deviation of input (X) and output (y) are saved as paramaters as a seperate PyTorch model.
 
@@ -94,17 +78,13 @@ The data is split into 80% for training and 20% for testing.
 
 ### Deflection
 
-$$\[
-R^2 > 0.99
-\]$$
+$$R^2 > 0.99$$
 
 Average error: 0.5320 mm
 
 ### Stress
 
-$$\[
-R^2 > 0.99
-\]$$
+$$R^2 > 0.99$$
 
 Average error: 0.6819 MPa
 
