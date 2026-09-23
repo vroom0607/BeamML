@@ -44,3 +44,4 @@ evaluate.eval(model=model_1,
 utils.save_model(model=model_1,
                  target_dir="saved_models",
                  model_name="beam_model_1.pth")
+torch.save(scalers, "saved_models/scalers.pth")
